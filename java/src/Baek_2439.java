@@ -29,6 +29,5 @@ public class Baek_2439 {
 
         Star a = new Star();
 
-        System.out.println(a.Star());
     }
 }
