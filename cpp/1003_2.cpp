@@ -14,5 +14,5 @@ int main() {
         }
         printf("%d %d\n",zero[n],one[n]);
     }
-
+    
 }
