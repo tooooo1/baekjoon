@@ -12,7 +12,7 @@ int main() {
         scanf("%d",&arr[i]);
     }
 
-    for (int i = 1; i <= N; i++) {
+    for (int i = 1; i <= N; i++) { //LIS
 		dp[i] = 1;
 		for (int j = 1; j < i; j++)
 			if (arr[j] < arr[i] && dp[i] <= dp[j])
