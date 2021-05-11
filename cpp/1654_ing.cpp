@@ -24,6 +24,7 @@ int main() {
     int end = *max_element(lan_cable.begin(),lan_cable.end());
     int result =0;
 
+
     while(start<=end) {
         int count =0;
         int mid = (start + end)/2;
