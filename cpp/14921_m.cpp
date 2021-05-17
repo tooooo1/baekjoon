@@ -24,6 +24,7 @@ int main() {
             }
         }
     }
+    
     sort(input.begin(),input.end()); // Á¤·Ä
 
     ll start=0;
