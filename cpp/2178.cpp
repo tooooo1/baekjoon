@@ -13,8 +13,8 @@ void bfs(int x,int y) {
     q.push(make_pair(x, y));
 	dis[x][y] = 1;
 	while (!q.empty()) {
-		int x = q.front().first;
-		int y = q.front().second;
+		x = q.front().first;
+		y = q.front().second;
 		q.pop();
 		for (int i = 0; i < 4; i++) {
 			int nx = x + dx[i];
