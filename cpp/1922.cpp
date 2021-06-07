@@ -6,7 +6,7 @@
 #define MAX 10001
 using namespace std;
 
-int V, E;
+int M,N;
 int parent[MAX];
 int result=0;
 vector<tuple<int,int,int>> v;
@@ -32,12 +32,12 @@ bool same(int x,int y) {
 }
 
 int main() {
-    cin >> V >> E;
+    cin >> M >> N;
 
-    for(int i=1;i<=V;i++)
+    for(int i=1;i<=M;i++)
         parent[i]=i;
 
-    for(int i=0;i<E;i++) {
+    for(int i=0;i<N;i++) {
         int A,B,C;
         cin >> A >> B >> C;
         v.push_back({C,A,B});
@@ -45,7 +45,7 @@ int main() {
 
     sort(v.begin(),v.end());
 
-    for(int i=0;i<E;i++) {
+    for(int i=0;i<N;i++) {
         if(!same(get<1>(v[i]), get<2>(v[i]))) {
             connection(get<1>(v[i]), get<2>(v[i]));
             result +=get<0>(v[i]);
