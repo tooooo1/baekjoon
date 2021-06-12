@@ -1,6 +1,8 @@
-A,B,C = map(int, input().split())
+A=int(input())
+B=int(input())
+C=int(input())
 
-N = A*B*C
-N=str(N)
-for i in range(len(N)):
-    
+result = list(str(A*B*C))
+
+for i in range(10):
+    print(result.count(str(i)))
