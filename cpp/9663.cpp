@@ -2,33 +2,46 @@
 
 using namespace std;
 
-int N,cnt;
-int col[16];
+int N;
+int result=0;
+int chess[16][16];
+int dy[3]= {-1,-1,-1};
+int dx[3]= {-1,0,1};
 
-bool promising(int i) {
-    int k=1;
-    bool flag = true;
+int down(int y,int x) {
+    for (int i=0;i<3;i++) {
+        int ny=y;
+        int nx=x;
 
-    while(k<i && flag) {
-        if(col[i] == col[k] || abs(col[i]-col[k])==i-k)
-            flag= false;
-        k++;
+        while(true) {
+            ny = ny+dy[i];
+            nx = nx+dx[i];
+
+            if(nx <0 || nx>=N || ny<0 || ny>=N)
+                break;
+            if(chess[ny][nx]==1)
+                return false;
+        }
     }
-    return flag;
+    return true;
 }
 
-void queens(int i) {
-    if(promising(i)) {
-        if(i==N) cnt++;
-        else for(int j=1;j<=N;j++) {
-            col[i+1] = j;
-            queens(i+1);
+void tooo1(int j) {
+    if(j==N) {
+        result++;
+        return;
+    }
+    for (int i=0;i<N;i++) {
+        if(down(j,i) && chess[j][i]==0) {
+            chess[j][i]=1;
+            tooo1(j+1);
+            chess[j][i]=0;
         }
     }
 }
 
 int main() {
-    cin >> N;
-    queens(0);
-    cout<<cnt;
+    cin>>N;
+    tooo1(0);
+    cout << result;
 }
