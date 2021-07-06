@@ -2,17 +2,20 @@
 
 using namespace std;
 
-string s;
-int result=0;
+int L,P,V;
+int i=1;
 
 int main() {
-    cin >> s;
+    while(true) {
+        int result=0;
+        cin >> L >> P >> V;
+        if(L==0 && P==0 && V==0) break;
+        else {
+            if(P<V) {
+                result= (V/P*L) + (V%P>L? L:V%P);
 
-    for(int i=0;i<s.length();i++) 
-        if(s[i]!=s[i+1]) 
-            result++;
-
-    if(!result) 
-        cout << result;
-    else cout << result/2;
+                cout << "Case "<<i++<<": " << result << "\n";
+            }
+        }
+    }
 }
