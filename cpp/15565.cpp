@@ -8,9 +8,9 @@ int N,K;
 vector<int> v;
 
 int main() {
-    cin >> N >> K; // N, K ÀÔ·Â¹Þ±â
+    cin >> N >> K; // N, K ìž…ë ¥ë°›ê¸°
 
-    for(int i=0;i<N;i++) { //¶óÀÌ¾ðÀÌ¶ó¸é ÀÎµ¦½º ÀúÀå
+    for(int i=0;i<N;i++) { //ë¼ì´ì–¸ì´ë¼ë©´ ì¸ë±ìŠ¤ ì €ìž¥
         int x;
         cin >> x;
         if(x==1) v.push_back(i);
@@ -18,10 +18,10 @@ int main() {
 
     int result=987654321;
 
-    if(v.size()<K) cout << "-1"; //¶óÀÌ¾ðÀÌ Kº¸´Ù ÀûÀ¸¸é -1 Ãâ·Â
+    if(v.size()<K) cout << "-1"; //ë¼ì´ì–¸ì´ Kë³´ë‹¤ ì ìœ¼ë©´ -1 ì¶œë ¥
     else {
         for(int i=0;i<=v.size()-K;i++) 
             result=min(result,v[i+K-1]-v[i]+1);
-        cout << result; // ¾Æ´Ï¶ó¸é °¡Àå ÀÛÀº ÀÎµ¦½º Â÷ÀÌ Ãâ·Â
+        cout << result; // ì•„ë‹ˆë¼ë©´ ê°€ìž¥ ìž‘ì€ ì¸ë±ìŠ¤ ì°¨ì´ ì¶œë ¥
     }
 }
