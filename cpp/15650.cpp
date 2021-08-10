@@ -7,21 +7,21 @@ int N,M;
 int arr[MAX];
 bool visited[MAX];
 
-void dfs(int a, int k) {
-    if(k==M) {
-        for(auto i =0;i<M;i++) {
+void dfs(int num, int k) {
+    if(k==M) { // M까지 들어갔을 시 실행
+        for(auto i =0;i<M;i++)
             cout << arr[i] << " ";
-        }
         cout << "\n";
-    }
-    for(auto i=a; i<=N;i++) {
-        if(!visited[i]) {
-            visited[i]=true;
-            arr[k]=i;
-            dfs(i+1,k+1);
-            visited[i]=false;
+    } else { // M까지 안 들어갔을 시
+        for(auto i=num; i<=N;i++) {
+            if(!visited[i]) { //방문 X시
+                visited[i]=true; //방문표시
+                arr[k]=i; // 값 저장
+                dfs(i+1,k+1); // 더 깊게 내려가자 (M까지)
+                visited[i]=false; //백트래킹 설정
+            }
         }
-    }
+    } 
 }
 
 int main() {
