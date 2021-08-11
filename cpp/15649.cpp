@@ -18,7 +18,7 @@ void dfs(int k) { //현재 위치
                 visited[i]=true; //방문 표시
                 arr[k]=i; // i값을 arr에 저장
                 dfs(k+1); //더 깊게 들어가자. (M까지)
-                visited[i]=false; //백트래킹 설정
+                visited[i]=false; //백트래킹 설정 
             }
         }
     }

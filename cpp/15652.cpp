@@ -13,8 +13,8 @@ void dfs(int num, int k) {
         cout << "\n";
     } else { // M까지 안 들어갔을 시
         for(auto i=num; i<=N;i++) {
-            arr[k]=i; // 값 저장
-            dfs(i+1,k+1); // 더 깊게 내려가자 (M까지)
+                arr[k]=i; // 값 저장
+                dfs(i,k+1); // 더 깊게 내려가자 (M까지)
         }
     }
 }

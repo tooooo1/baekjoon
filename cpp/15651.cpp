@@ -5,6 +5,7 @@ using namespace std;
 
 int N,M;
 int arr[MAX];
+bool visited[MAX];
 
 void dfs(int num, int k) {
     if(k==M) { // M까지 들어갔을 시 실행
@@ -12,9 +13,9 @@ void dfs(int num, int k) {
             cout << arr[i] << " ";
         cout << "\n";
     } else { // M까지 안 들어갔을 시
-        for(auto i=num; i<=N;i++) {
+        for(auto i=1; i<=N;i++) { //1부터!
             arr[k]=i; // 값 저장
-            dfs(i+1,k+1); // 더 깊게 내려가자 (M까지)
+            dfs(i,k+1); // 더 깊게 내려가자 (M까지)
         }
     }
 }
